@@ -1,27 +1,30 @@
-13322603515 123456
-2105837635@qq.com	   jianyaokeji@200324 123456这个账号登录插件
+## 账号信息
+- 手机号: `13322603515` 密码: `123456`
+- 邮箱: `2105837635@qq.com` 密码: `jianyaokeji@200324` 备注: `123456这个账号登录插件`
 https://www.tt123.com/
 
+## MQ 地址
+- URL: `http://112.74.104.156:15672`
+- 用户名: `admin`
+- 密码: `e897e069`
 
-这个是测试的mq地址
-http://112.74.104.156:15672 
-admin
-e897e069
+## 数据库连接
+- 地址: `rm-wz9hpx2gt8nnnz10qco.mysql.rds.aliyuncs.com`
+- 账号: `daren_dev_user`
+- 密码: `@daren123`
 
-数据库连接地址：rm-wz9hpx2gt8nnnz10qco.mysql.rds.aliyuncs.com
-账号：daren_dev_user
-密码：@daren123
+## 技术栈
+- `nodejs + websocket + ts + worker_theart`
 
-nodejs+websocket+ts+worker_theart
-
+## 测试命令
+```bash
 npx ts-node src/index.ts
-单位:ms
-test1:5000 
-test2:1
-tesT3:0
-test4:30000 
+```
 
-https://git.bitaihub.com/Bitai/creator-unified-exp
+## Git 相关
+
+- 仓库地址: [Bitai/creator-unified-exp](https://git.bitaihub.com/Bitai/creator-unified-exp)
+```bash
 克隆分组
 $ git clone https://e.coding.net/g-sldf2848/agenthub/creator-extension.git 
 cd到抓下来的目录
@@ -50,8 +53,9 @@ background:后端
 
 是不追踪文件可以避免提交是吗
 git update-index --skip-worktree packages/creator-extension/config/env.ts
-
-测试代码
+  ```
+## 测试代码
+```javascript
 async function findTikTokTab() {
   const tabs = await chrome.tabs.query({ 
     url: "https://affiliate-us.tiktok.com/product/sample-request?shop_region=US",
@@ -94,8 +98,7 @@ const testMessages = [
     },
     taskId: "test-task-live",
     messageId: "test-msg-live"
-  }
-,
+  },
   // 测试消息3
   {
     type: "get_video_data_response",
@@ -112,7 +115,6 @@ const testMessages = [
     taskId: "test-task-live",
     messageId: "test-msg-live"
   }
-
 ];
 
 // ===== 执行测试 =====
@@ -120,11 +122,11 @@ const testMessages = [
   try {
     const tabId = await findTikTokTab();
     console.log("🔍 目标标签页ID:", tabId);
-	let i=1;
+    let i = 1;
     // 遍历测试消息数组
     for (const testMessage of testMessages) {
       console.log(`\n=== 测试 content_type=${testMessage.data.options.content_type}  测试点${i}===`);
-i++;
+      i++;
       console.log("📤 发送测试消息:", testMessage);
       
       const response = await chrome.tabs.sendMessage(tabId, testMessage);
@@ -142,12 +144,15 @@ i++;
       };
       console.log("🚀 模拟socket响应:", socketResponse);
     }
-	console.log("All_AC");
+    console.log("All_AC");
   } catch (error) {
     console.error("❌ 测试失败:", error);
   }
 })();
-分支origin/maoqi/feature/task_schedule完美通过
-可以正常向插件以指定频率发送请求
-可以正确返回请求结果并且data和token皆为正常
-0ms成功触发保底机制
+```
+
+## 测试结果
+- 分支 `origin/maoqi/feature/task_schedule` 完美通过。
+- 可以正常向插件以指定频率发送请求。
+- 可以正确返回请求结果，并且 `data` 和 `token` 皆为正常。
+- `0ms` 成功触发保底机制。
