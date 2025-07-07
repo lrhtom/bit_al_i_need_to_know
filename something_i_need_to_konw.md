@@ -2,7 +2,10 @@
 - 手机号: `13322603515` 密码: `123456`
 - 邮箱: `2105837635@qq.com` 密码: `jianyaokeji@200324` 备注: `123456这个账号登录插件`
 https://www.tt123.com/
-
+## bital代码库
+- https://git.bitaihub.com/
+- lrh
+- a12345678
 ## MQ 地址
 - URL: `http://112.74.104.156:15672`
 - 用户名: `admin`
@@ -163,7 +166,8 @@ const testMessages = [
   -发送消息列表(从id大的开始然后一个一个发 发过的设定is_send=1)
 -ba_dict
   -达人货物和任务状态字典
--ba_operation_log(全部事件debug储存点)
+-ba_operation_log
+  -(全部事件debug储存点)
 -ba_shop_creator
 -ba_system_setting
   -商品种类标签
@@ -174,4 +178,4 @@ const testMessages = [
 -ba_task_creator
   -客户端的任务达人 task_id是对应的客户端任务
 -ba_user_shop
-  -bit_al用户数据 user_id代表对应用户拥有的抖音店铺 比如如果看到两个96就是96号的用户有2家抖音店
+  -bit_al用户数据 user_id代表对应用户拥有的抖音店铺 比如如果看到两个96就是96号的用户有2家抖音店 ai_chat是是否禁用ai聊天
