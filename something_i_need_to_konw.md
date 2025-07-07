@@ -160,26 +160,43 @@ const testMessages = [
 - 可以正确返回请求结果，并且 `data` 和 `token` 皆为正常。
 - `0ms` 成功触发保底机制。
 
-##数据库
-- ba_creator
-  -所有达人
--ba_creator_message
-  -发送消息列表(从id大的开始然后一个一个发 发过的设定is_send=1)
--ba_dict
-  -达人货物和任务状态字典
--ba_operation_log
-  -(全部事件debug储存点)
--ba_shop_creator
--ba_system_setting
-  -商品种类标签
--ba_tag
-  -任务标签
--ba_task_new 
-  -客户端的任务 id是对应的客户端任务 name是其名字 各种template对应其不同状态发送的消息
--ba_task_creator
-  -客户端的任务达人 task_id是对应的客户端任务
--ba_user_shop
-  -bit_al用户数据 user_id代表对应用户拥有的抖音店铺 比如如果看到两个96就是96号的用户有2家抖音店 ai_chat是是否禁用ai聊天
+## 数据库
+
+### `ba_creator`
+- 所有达人
+
+### `ba_creator_message`
+- 发送消息列表（从 `id` 大的开始，然后一个一个发，发过的设定 `is_send=1`）
+
+### `ba_dict`
+- 达人货物和任务状态字典
+
+### `ba_operation_log`
+- 全部事件 debug 储存点
+
+### `ba_shop_creator`
+- （无描述）
+
+### `ba_system_setting`
+- 商品种类标签
+
+### `ba_tag`
+- 任务标签
+
+### `ba_task_new`
+- 客户端的任务：
+  - `id` 是对应的客户端任务。
+  - `name` 是其名字。
+  - 各种 `template` 对应其不同状态发送的消息。
+
+### `ba_task_creator`
+- 客户端的任务达人：
+  - `task_id` 是对应的客户端任务。
+
+### `ba_user_shop`
+- BitAI 用户数据：
+  - `user_id` 代表对应用户拥有的抖音店铺（例如：如果看到两个 `96`，就是 96 号的用户有 2 家抖音店）。
+  - `ai_chat` 是是否禁用 AI 聊天。
 
 ##货物信息测试数据
 ```javascript
