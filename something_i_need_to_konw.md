@@ -159,6 +159,7 @@ const testMessages = [
 - 可以正常向插件以指定频率发送请求。
 - 可以正确返回请求结果，并且 `data` 和 `token` 皆为正常。
 - `0ms` 成功触发保底机制。
+
 ##数据库
 - ba_creator
   -所有达人
@@ -179,6 +180,7 @@ const testMessages = [
   -客户端的任务达人 task_id是对应的客户端任务
 -ba_user_shop
   -bit_al用户数据 user_id代表对应用户拥有的抖音店铺 比如如果看到两个96就是96号的用户有2家抖音店 ai_chat是是否禁用ai聊天
+
 ##货物信息测试数据
 ```javascript
         const datas = [
