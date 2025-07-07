@@ -14,7 +14,7 @@ https://www.tt123.com/
 - 密码: `@daren123`
 
 ## 技术栈
-- `wxt+nodejs + websocket + ts + worker_theart + 消息队列qm + mysql + 线程池 + 设计模式/线程设计模式`
+- `(3件套+vue)+wxt+nodejs + websocket + ts + worker_theart + 消息队列qm + mysql + 线程池 + 设计模式/线程设计模式`
 
 ## 测试命令
 ```bash
