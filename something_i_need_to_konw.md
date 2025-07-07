@@ -4,8 +4,8 @@
 https://www.tt123.com/
 ## bital代码库
 - https://git.bitaihub.com/
-- lrh
-- a12345678
+- lrh@bitaihub.com
+- 20040502lrh
 ## MQ 地址
 - URL: `http://112.74.104.156:15672`
 - 用户名: `admin`
