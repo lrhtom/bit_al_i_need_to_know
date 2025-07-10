@@ -32,7 +32,7 @@ https://www.tt123.com/
 ### 3. 后端开发
 - **运行时**：`Node.js Express`
 - **语言**：`TypeScript`
--- **前后端协作**：`WebSocket/get/post`（基于 `Socket.io` 库）
+-- **前后端协作**：`WebSocket（基于 Socket.io 库）/get/post`
 
 ### 4. 网络通信/实时通信
 - **消息队列**：`QM`（如 RabbitMQ/Kafka）
