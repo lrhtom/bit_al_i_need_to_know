@@ -24,7 +24,7 @@ https://www.tt123.com/
 ###后端开发
 -`nodejs() + ts`
 ###网络通信/实时通信
--`消息队列qm + websocket（Socket.io库）`
+-`消息队列qm + websocket（Socket.io库） + tcp/ip`
 ###设计模式
 -`mvc`
 ###线程设计模式
