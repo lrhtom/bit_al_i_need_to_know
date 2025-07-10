@@ -33,7 +33,10 @@ https://www.tt123.com/
 -`electron`
 ###数据库
 - `mysql（不同于一个用户一个表而是一个大表里面筛选） `
-
+###服务器
+-`frp`
+###自动化测试工具
+-`Playwright`
 ## 测试命令
 ```bash
 npx ts-node src/index.ts
