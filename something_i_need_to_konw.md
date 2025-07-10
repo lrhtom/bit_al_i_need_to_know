@@ -17,26 +17,58 @@ https://www.tt123.com/
 - 密码: `@daren123`
 
 ## 技术栈
-###运维/管理
--`docker(容器) + linux + git`
-###前端
--`(3件套+vue)+wxt`
-###后端开发
--`nodejs() + ts`
-###网络通信/实时通信
--`消息队列qm + websocket（Socket.io库） + tcp/ip`
-###设计模式
--`mvc`
-###线程设计模式
--`Worker Thread 线程池、主从模式`
-###客户端框架
--`electron`
-###数据库
-- `mysql（不同于一个用户一个表而是一个大表里面筛选） `
-###服务器
--`frp`
-###自动化测试工具
--`Playwright`
+
+### 1. 运维/管理
+- **容器化**：`Docker`
+- **操作系统**：`Linux`
+- **版本控制**：`Git`
+
+### 2. 前端
+- **基础技术**：`HTML/CSS/JS`（三件套）
+- **框架**：`Vue` + `WXT`（浏览器扩展开发）
+
+### 3. 后端开发
+- **运行时**：`Node.js`
+- **语言**：`TypeScript`
+
+### 4. 网络通信/实时通信
+- **消息队列**：`QM`（如 RabbitMQ/Kafka）
+- **实时协议**：`WebSocket`（基于 `Socket.io` 库）
+- **底层协议**：`TCP/IP`
+
+### 5. 设计模式
+- **架构模式**：`MVC`（Model-View-Controller）
+
+### 6. 线程设计模式
+- **并发模型**：
+  - `Worker Thread`（工作线程）
+  - 线程池与主从模式
+
+### 7. 客户端框架
+- **跨平台桌面应用**：`Electron`
+
+### 8. 数据库
+- **关系型数据库**：`MySQL`
+  - 设计特点：单表高效查询（非分表设计）
+
+### 9. 服务器工具
+- **内网穿透**：`FRP`（Fast Reverse Proxy）
+
+### 10. 自动化测试工具
+- **端到端测试**：`Playwright`（支持多浏览器）
+
+---
+
+### 技术栈关联图
+```mermaid
+graph TD
+  A[前端] -->|HTTP/WebSocket| B[后端]
+  B -->|MQ| C[异步任务]
+  B -->|TCP/IP| D[网络通信]
+  C -->|Worker Thread| B
+  B -->|Electron| E[桌面端]
+  B -->|FRP| F[公网访问]
+```
 ## 测试命令
 ```bash
 npx ts-node src/index.ts
