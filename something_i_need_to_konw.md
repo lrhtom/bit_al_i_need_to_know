@@ -17,7 +17,22 @@ https://www.tt123.com/
 - 密码: `@daren123`
 
 ## 技术栈
-- `(3件套+vue)+wxt+nodejs + websocket + ts + worker_theart + 消息队列qm + mysql + 线程池 + 设计模式/线程设计模式`
+###运维/管理
+-`docker(容器) + linux + git`
+###前端
+-`(3件套+vue)+wxt`
+###后端开发
+-`nodejs() + ts`
+###网络通信/实时通信
+-`消息队列qm + websocket（Socket.io库）`
+###设计模式
+-`mvc`
+###线程设计模式
+-`Worker Thread 线程池、主从模式`
+###客户端框架
+-`electron`
+###数据库
+- `mysql（不同于一个用户一个表而是一个大表里面筛选） `
 
 ## 测试命令
 ```bash
