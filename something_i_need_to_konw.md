@@ -59,8 +59,8 @@ https://www.tt123.com/
 
 ### 10. 自动化测试工具
 - **端到端测试**：`Playwright`（支持多浏览器）
-
----
+### 11.al
+-`火山引擎+deepseek`
 
 ### 技术栈关联图
 ```mermaid
