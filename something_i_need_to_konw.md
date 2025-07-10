@@ -26,10 +26,13 @@ https://www.tt123.com/
 ### 2. 前端
 - **基础技术**：`HTML/CSS/JS`（三件套）
 - **框架**：`Vue` + `WXT`（浏览器扩展开发）
+- **构建工具**：`Vite`（替代 Webpack）
+- **状态管理**：`Pinia`（替代 Vuex）
 
 ### 3. 后端开发
-- **运行时**：`Node.js`
+- **运行时**：`Node.js Express`
 - **语言**：`TypeScript`
+-- **前后端协作**：`WebSocket/get/post`（基于 `Socket.io` 库）
 
 ### 4. 网络通信/实时通信
 - **消息队列**：`QM`（如 RabbitMQ/Kafka）
