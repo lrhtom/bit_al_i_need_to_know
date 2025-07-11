@@ -110,6 +110,62 @@ background:后端
 是不追踪文件可以避免提交是吗
 git update-index --skip-worktree packages/creator-extension/config/env.ts
   ```
+## 任务状态机说明
+
+### 状态流转表
+| 状态代码            | 触发场景                              | 系统行为                               | 允许的下一状态                          |
+|---------------------|-------------------------------------|---------------------------------------|----------------------------------------|
+| `not_started`       | 任务/订单刚创建                      | 等待分配或认领                         | `pending_reach`, `rejected`            |
+| `pending_reach`     | 商家发布任务，等待达人响应            | 平台可发送提醒通知                     | `reached`, `rejected`                  |
+| `reached`           | 达人查看任务但未确认                  | 商家可主动跟进沟通                     | `pending_invite`, `rejected`           |
+| `pending_invite`    | 需商家主动邀请达人                    | 达人未接受邀请                         | `invited`, `rejected`                  |
+| `invited`           | 达人接受邀请                          | 达人开始内容创作                       | `reviewing`, `rejected`                |
+| `rejected`          | 达人拒绝或商家取消                    | 任务终止，释放资源                     | -                                      |
+| `reviewing`         | 达人提交内容等待审核                  | 平台/商家检查合规性                    | `review_passed`, `review_failed`       |
+| `review_failed`     | 内容未通过审核                        | 需达人修改或任务终止                   | `reviewing`, `rejected`                |
+| `review_passed`     | 内容审核通过                          | 触发商品发货或发布                     | `shipped`, `completed`                 |
+| `shipped`           | 商家寄出样品                          | 等待达人收货确认                       | `received`, `incomplete`               |
+| `received`          | 达人确认收货                          | 达人需按约定完成内容                   | `completed`, `incomplete`              |
+| `completed`         | 达人发布内容且达标                    | 结算佣金/奖励                          | `finish`                               |
+| `incomplete`        | 达人未按时提交或未达标                | 可能扣减信誉分                         | `finish`                               |
+| `finish`            | 任务全流程结束                        | 归档记录，锁定操作                     | -                                      |
+
+### 关键逻辑说明
+1. **终态规则**：
+   - `rejected` 和 `finish` 为终态，不可逆转。
+   - 终态任务需归档，仅保留查询权限。
+
+2. **超时处理**：
+   - `pending_reach` 超时未响应 → 自动转 `rejected`。
+   - `received` 超时未完成 → 转 `incomplete`。
+
+3. **状态回退**：
+   - `review_failed` 可修改后重新进入 `reviewing`。
+   - 其他状态不可回退（如 `completed` 不能回到 `reviewing`）。
+
+4. **权限控制**：
+   - 达人仅能操作 `pending_reach` → `reached` → `invited`。
+   - 商家可强制终止（任何状态 → `rejected`）。
+
+### 可视化状态机
+```mermaid
+stateDiagram-v2
+  [*] --> not_started
+  not_started --> pending_reach: 分配达人
+  pending_reach --> reached: 达人查看
+  reached --> pending_invite: 需邀请
+  pending_invite --> invited: 接受邀请
+  invited --> reviewing: 提交内容
+  reviewing --> review_passed: 审核通过
+  review_passed --> shipped: 发货
+  shipped --> received: 达人收货
+  received --> completed: 内容达标
+  completed --> finish: 结算
+  reviewing --> review_failed: 审核失败
+  review_failed --> reviewing: 重新提交
+  any_state --> rejected: 强制终止
+  any_state --> finish: 超时终止
+```
 ## 测试代码
 ```javascript
 async function findTikTokTab() {
