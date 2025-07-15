@@ -15,7 +15,9 @@ https://www.tt123.com/
 - 地址: `rm-wz9hpx2gt8nnnz10qco.mysql.rds.aliyuncs.com`
 - 账号: `daren_dev_user`
 - 密码: `@daren123`
-
+##回复信息模板
+- `📦 Hey love! Your order is on the way! 🚚`
+- `🎁 Yay! Your package has arrived! ✨`
 ## 技术栈
 
 ### 1. 运维/管理
