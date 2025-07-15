@@ -10,7 +10,8 @@ https://www.tt123.com/
 - URL: `http://112.74.104.156:15672`
 - 用户名: `admin`
 - 密码: `e897e069`
-
+##紫鸟
+- `13712716968验证码登陆然后选虎鲸出海`
 ## 数据库连接
 - 地址: `rm-wz9hpx2gt8nnnz10qco.mysql.rds.aliyuncs.com`
 - 账号: `daren_dev_user`
