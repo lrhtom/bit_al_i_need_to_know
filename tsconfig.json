@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",  // Node.js 使用 CommonJS 模块
+    "target": "ES2020",    // 编译目标版本
+    "esModuleInterop": true,
+    "strict": true,        // 启用严格类型检查
+    "skipLibCheck": true   // 跳过库文件检查
+  },
+  "include": ["**/*.ts"],  // 包含所有 .ts 文件
+  "exclude": ["node_modules"]
+}
