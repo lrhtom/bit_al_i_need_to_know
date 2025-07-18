@@ -414,3 +414,13 @@ const testMessages = [
         code: 0,
       });
       ```
+
+## `chromium` 组件与技术实现
+
+| 组件                     | 代码路径                                  | 技术实现               | 备注                     |
+|--------------------------|------------------------------------------|------------------------|--------------------------|
+| **主窗口框架**           | `chrome/browser/ui/views/frame/`         | `gfx::Canvas` (Skia)   | 标题栏、边框绘制         |
+| **标签页**               | `chrome/browser/ui/views/tabs/`          | `views::View`          | 形状、颜色控制           |
+| **工具栏**               | `chrome/browser/ui/views/toolbar/`       | WebUI + Native         | 按钮、地址栏交互         |
+| **新标签页背景**         | `chrome/browser/ui/webui/new_tab_page/`  | HTML/CSS/JS            | 动态背景渲染             |
+| **全局主题**             | `ui/views/themes/`                       | 原生控件 + CSS         | 颜色、圆角等样式统一     |
